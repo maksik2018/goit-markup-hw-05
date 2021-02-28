@@ -7,6 +7,7 @@
   --primary-white: rgba(255, 255, 255, 1);
   --main-text-grey: rgba(117, 117, 117, 1);
   --ftr-text-grey-op60: rgba(255, 255, 255, 0.6);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -77,28 +78,70 @@ p {
 
 .nav-links li {
   margin-right: 50px;
+  
 }
 
 .nav-links li:last-child {
   margin-right: 0;
 }
 
-.nav-links .link {
+.menu-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--hdr-text-black);
+  position: relative;
+  transition: color 250ms var(--timing-function);
+  
 }
 
-.nav-links .link:hover,
-.nav-links .link:focus {
+.menu-link:hover,
+.menu-link:focus {
   color: var(--primary-blue);
+  
 }
 
-.nav-links .link.current {
-  color: var(--primary-blue);
+
+/* .menu-link::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  margin-top: 28px;
+  opacity: 0;
+  transition: opacity 250ms var(--timing-function);
+  
 }
+
+.menu-link:hover::after,
+.menu-link.focus::after {
+  opacity: 1;
+} */
+
+.menu-link.current {
+  color: var(--primary-blue);
+  position: relative;
+  
+}
+
+.menu-link.current::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  margin-top: 28px;
+  opacity: 1;   
+}
+
 
 .nav-contacts {
   display: flex;
@@ -122,17 +165,13 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-text-grey);
+  transition: color 250ms var(--timing-function);
 }
 
-/* .nav-contacts .link:hover,
+.nav-contacts .link:hover,
 .nav-contacts .link:focus {
   color: var(--primary-blue);
-  } */
-
-/* .phone:hover,
-.phone:focus {
-  fill: var(--primary-blue);
-} */
+  }
 
 .header .container {
   display: flex;
@@ -146,7 +185,7 @@ p {
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
-  display: inline-block;
+  display: block;
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -176,10 +215,7 @@ p {
   align-items: center;
 }
 
-.nav-contacts .link:hover,
-.nav-contacts .link:focus {
-  color: var(--primary-blue);
-  }
+
 
 
 /* header finish */
@@ -227,6 +263,7 @@ footer {
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--ftr-text-grey-op60);
+  transition: 250ms var(--timing-function);
 }
 
 .footer-link:hover,
@@ -262,6 +299,7 @@ footer {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   fill: var(--primary-white);
+  transition: background 250ms var(--timing-function);
 
 }
 

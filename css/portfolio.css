@@ -45,6 +45,7 @@
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
+  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .btn-title:hover,
@@ -52,7 +53,7 @@
 .btn-title:active {
   background-color: var(--primary-blue);
   color: var(--primary-white);
-  outline: none;
+  /* outline: none; */
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -69,17 +70,25 @@
   flex-basis: calc (100% / 3 - 30px);
   margin-top: 30px;
   margin-left: 30px;
+  
   /* outline: 1px solid rgba(238, 238, 238, 1); */
+}
+
+.examples li:hover,
+.examples li:focus {
+  transform: translateY(0);
 }
 
 .examples-link {
   display: block;
   outline: 1px solid rgba(238, 238, 238, 1);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .examples-link:hover,
-examples-link:focus{
+.examples-link:focus{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  
 }
 
 .examples .pretitle {
@@ -95,7 +104,7 @@ examples-link:focus{
 
 }
 
-.examples p {
+.examples-text {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.9;
@@ -104,4 +113,39 @@ examples-link:focus{
   margin-bottom: 20px;
   margin-left: 24px;
   margin-right: 24px;
+}
+
+.examples-thumb {
+  position: relative;
+  overflow: hidden;
+      
+}
+
+.examples-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateY(100%);
+  background: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms var(--timing-function);
+     
+  
+}
+
+.examples-link:hover .examples-overlay,
+.examples-link:focus .examples-overlay {
+  transform: translateY(0);
+}
+  
+.overlay-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--primary-white);
+  padding: 63px 24px;
+  
 }
