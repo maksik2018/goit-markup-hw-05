@@ -198,7 +198,7 @@ img {
   color: var(--primary-white);
   text-align: center;
   background: rgba(47, 48, 58, 0.8)
-  }
+}
 
 .task-thumb {
   position: relative;
@@ -271,10 +271,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary-white);
+  background-color: var(--primary-white);
   border-radius: 50%;
   fill: var(--social-icons);
-  transition: background 250ms var(--timing-function), fill 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
 .social-links:hover,
@@ -382,7 +382,7 @@ img {
 }
 
 .icon-close:hover,
-.icon-close:hover {
+.icon-close:focus {
   fill: var(--primary-white);
   background-color: var(--primary-blue);
 }
